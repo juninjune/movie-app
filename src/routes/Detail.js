@@ -1,6 +1,8 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import styles from "./Detail.module.css";
+
+import Loading from "../components/Loading";
 
 function Detail() {
   const { id } = useParams();
@@ -20,14 +22,14 @@ function Detail() {
   return (
     <div>
       {loading ? (
-        <div>loading...</div>
+        <Loading />
       ) : (
         <div className={styles.pageContainer}>
-          <img src={movie.large_cover_image}></img>
+          <img src={movie.large_cover_image} className={styles.img}></img>
           <h1>{movie.title}</h1>
-          <span>{movie.year}</span>
-          <span>Rating : {movie.rating}</span>
-          <p>{movie.description_full}</p>
+          <span className={styles.span}>{movie.year}</span>
+          <span className={styles.span}>Rating : {movie.rating}</span>
+          <p className={styles.p}>{movie.description_full}</p>
         </div>
       )}
     </div>
