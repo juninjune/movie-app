@@ -1,0 +1,19 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+img {
+  width: 100%;
+}
+
+span {
+  color: white;
+  text-align: center;
+}
+
+p {
+  text-indent: 5px;
+  color: white;
+}
